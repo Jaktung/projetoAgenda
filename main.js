@@ -1,6 +1,7 @@
 const form = document.getElementById("form");
+let linhas = " "
 
-form.addEventListener(function(e){
+form.addEventListener("submit", function(e){
     e.preventDefault();
 
     const inputNome = document.getElementById("nome")
@@ -11,8 +12,10 @@ form.addEventListener(function(e){
     linha += `<td>${inputNumeroCell.value}</td>`
     linha += '</tr>'
 
+    linhas += linha
+
 
     const corpoTabela = document.querySelector('tbody')
-    corpoTabela.innerHTML = linha
+    corpoTabela.innerHTML = linhas
 
 })
